@@ -47,10 +47,6 @@ class status{
 +SetPrice()
 +Display()
 }
-class User{}
-CoffeeShopSystem "1" -- "1"Menu
-Menu "1" -- "1"inventory
-CoffeeShopSystem "1" -- "1" Order
 ```
 
 ---
@@ -60,7 +56,7 @@ CoffeeShopSystem "1" -- "1" Order
 ## How We Got Here
 
   
-Reading through the text, we started off by isolating nouns. After some discussion, we decided to add a bit more, namely user.
+making sure employees managers and customers make changes to the order. Mainly being able to record status of the order.
 
   
 
@@ -72,7 +68,7 @@ Reading through the text, we started off by isolating nouns. After some discussi
 
   
 
-One disagreement we had is if nouns such as customers, emplyoee, and so on were to be added as entities. We decided to just go with "user", as there are potentially unique roles that are needed. That said, there's a chance that these are external to the system. 
+making the order traceable and trackable. making sure it has a time stamp.
 
   
 
@@ -83,5 +79,4 @@ One disagreement we had is if nouns such as customers, emplyoee, and so on were 
 ## What We're Not Sure About
 
   
-
-If we should add "users", and then more detailed users in the system.
+if the order needs 
