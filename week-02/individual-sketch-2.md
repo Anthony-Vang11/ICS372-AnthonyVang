@@ -56,7 +56,7 @@ class status{
 ## How We Got Here
 
   
-making sure employees managers and customers make changes to the order. Mainly being able to record status of the order.
+Making sure employees managers and customers make changes to the order. Mainly being able to record status of the order.
 
   
 
@@ -68,7 +68,7 @@ making sure employees managers and customers make changes to the order. Mainly b
 
   
 
-making the order traceable and trackable. making sure it has a time stamp.
+Making the order traceable and trackable. If we need a time stamp.
 
   
 
@@ -79,4 +79,4 @@ making the order traceable and trackable. making sure it has a time stamp.
 ## What We're Not Sure About
 
   
-if the order needs 
+If the order needs anything else that is specific towards the employees or user.
