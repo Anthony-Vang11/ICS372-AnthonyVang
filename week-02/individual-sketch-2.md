@@ -1,33 +1,87 @@
-# Individual Sketch — Week [N] Round [N]
-**Student:** [Your Name]
-**Date:** [Date]
+# Group Artifact — Week [2] Round [1]
+
+**Group:** 4
+
+**Members present:** Abraham, Snow, Na, Anthony, Riss
+
+**Date:** 9/3/2026
+
+  
 
 ---
 
-## My Answer
+  
 
-*Respond directly to the prompt. Write in plain sentences — no need to be formal. You have 12 minutes total, so think first, then write.*
+## Our Design
 
-[Your response here]
+  
+
+Our design is fairly basic, but aims to lay out large parts of the system. "CoffeeShopSystem" aims to be the work horse that deals with changes within the system, Menu works as a collection of items that are being posted for sale, inventory aims to be the specific items that are being sold and how they update, order is the sale and calculation of all items from a customer. User aims to be a way that a role can be selected for what is being done.  
+
+  
 
 ---
+
+  
 
 ## Diagram
 
-*Include your Mermaid diagram below. If the prompt doesn't ask for a diagram, delete this section.*
+  
 
 ```mermaid
+classDiagram
+class Menu{
++listOfSoldItems
 
+}
+class Order{
++CustomerID
++OrderCost
+-SaveOrder()
+}
+class inventory{
++itemName
++itemPrice
+}
+class CoffeeShopSystem{
++SetPrice()
++Display()
+}
+class User{}
+CoffeeShopSystem "1" -- "1"Menu
+Menu "1" -- "1"inventory
+CoffeeShopSystem "1" -- "1" Order
 ```
 
 ---
 
-## What I'm Not Sure About
+  
 
-*One or two sentences. What feels uncertain or wrong about what you just produced?*
+## How We Got Here
 
-[Your response here]
+  
+Reading through the text, we started off by isolating nouns. After some discussion, we decided to add a bit more, namely user.
+
+  
 
 ---
 
-**Commit this file before group discussion begins.**
+  
+
+## Where We Disagreed
+
+  
+
+One disagreement we had is if nouns such as customers, emplyoee, and so on were to be added as entities. We decided to just go with "user", as there are potentially unique roles that are needed. That said, there's a chance that these are external to the system. 
+
+  
+
+---
+
+  
+
+## What We're Not Sure About
+
+  
+
+If we should add "users", and then more detailed users in the system.
