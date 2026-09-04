@@ -42,10 +42,13 @@ class Order{
 class order cost{
 +itemName
 +itemPrice
++cost
 }
 class status{
 +SetPrice()
 +Display()
++building phase
+
 }
 ```
 
