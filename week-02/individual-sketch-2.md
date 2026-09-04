@@ -1,4 +1,4 @@
-# Group Artifact — Week [2] Round [1]
+# Group Artifact — Week [2] Round [2]
 
 **Group:** 4
 
@@ -16,7 +16,7 @@
 
   
 
-Our design is fairly basic, but aims to lay out large parts of the system. "CoffeeShopSystem" aims to be the work horse that deals with changes within the system, Menu works as a collection of items that are being posted for sale, inventory aims to be the specific items that are being sold and how they update, order is the sale and calculation of all items from a customer. User aims to be a way that a role can be selected for what is being done.  
+I think for the order design we need customer ID, order cost, and status of the order.
 
   
 
@@ -39,11 +39,11 @@ class Order{
 +OrderCost
 -SaveOrder()
 }
-class inventory{
+class order cost{
 +itemName
 +itemPrice
 }
-class CoffeeShopSystem{
+class status{
 +SetPrice()
 +Display()
 }
