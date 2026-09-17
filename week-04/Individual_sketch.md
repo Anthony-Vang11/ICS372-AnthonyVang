@@ -31,7 +31,7 @@ Working alone, on yours:
 6. The system saves the order. (System Response)
 7. The system sends the completed order to the Barista. (System Response)
 
-2.Then go back through it and annotate every step with what it assumes. One phrase per step in the margin. Step 2 assumes the item is available. Step 5 assumes the order can still be changed. Do this for every step, even the ones that seem to assume nothing. 
+2. Then go back through it and annotate every step with what it assumes. One phrase per step in the margin. Step 2 assumes the item is available. Step 5 assumes the order can still be changed. Do this for every step, even the ones that seem to assume nothing. 
 
 Step 1 assumes the customer knows what they want.
 Step 2 assumes the selected items are available.
