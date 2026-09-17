@@ -70,11 +70,7 @@ File: week-04/individual-sketch-1.md
 
 ## 2. What I'm Not Sure About
 
-*One or two sentences. What feels uncertain or wrong about what you just produced?*
-
-*This is about your own thinking, and it is required every week. It is not the same thing as a question written for a stakeholder. When the prompt asks you for one of those, it belongs up in section 1 with the step that asked for it, and it does not replace this section.*
-
-[Your response here]
+I’m not completely sure if all of the steps in my main flow are necessary, especially whether sending the order to the Barista should be part of “Customer Places Order.” I also think I need to make sure my alternative flows match the assumptions from each step.
 
 ---
 
