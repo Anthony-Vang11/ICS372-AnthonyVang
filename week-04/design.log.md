@@ -11,7 +11,6 @@
 
 The main problem I was trying to figure out was how the system should handle item prices when a manager changes the price on the menu. I needed to understand the difference between the current price of an item and the price that was used when a customer placed an order. I wanted to make sure that changing the menu price later would not change the total or information of an order that had already been placed.
 
----
 
 ---
 
