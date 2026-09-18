@@ -58,6 +58,8 @@ Step 8 assumes the order was successfully saved.
 | 5c. Customer adds, removes, or changes an item. |                                                     |
 |                                                 | 5d. System updates the order and total cost.        |
 
+Postcondition: The customer's order is saved in the system and sent to the Barista.
+
 
 
 Before group discussion starts: commit your sketch to your individual repo.
