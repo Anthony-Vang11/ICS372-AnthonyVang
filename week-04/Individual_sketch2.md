@@ -11,54 +11,58 @@
 Working alone, against your group's docs/design/domain-model.md:
 
 1.Draw Customer Places Order as a sequence diagram in Mermaid, working from the numbered steps of the use case you wrote last week. The actor, at least three entities named exactly as your model names them, every arrow labelled with the message in plain language — askForCurrentPrice, not getPrice() — and the return path, not just the outgoing calls.
+Copy this directly into GitHub:
+
 ```mermaid
 sequenceDiagram
     participant Customer
     participant CoffeeShopSystem
-    participant Item
+    participant inventory
     participant Order
 
-    Customer->>CoffeeShopSystem: Select items
-    CoffeeShopSystem->>Item: Get price
-    Item-->>CoffeeShopSystem: Return price
-    CoffeeShopSystem-->>Customer: Show price
+    Customer->>CoffeeShopSystem: selectItem()
+    CoffeeShopSystem->>inventory: askForCurrentPrice()
+    inventory-->>CoffeeShopSystem: return current price
+    CoffeeShopSystem->>Order: addItem()
+    Order-->>CoffeeShopSystem: return updated order
+    CoffeeShopSystem-->>Customer: display selected item and price
 
-    Customer->>CoffeeShopSystem: Confirm order
-    CoffeeShopSystem->>Order: Save order
-    Order-->>CoffeeShopSystem: Order saved
-    CoffeeShopSystem-->>Customer: Confirm order
+    Customer->>CoffeeShopSystem: confirmOrder()
+    CoffeeShopSystem->>Order: saveOrder()
+    Order-->>CoffeeShopSystem: return saved order
+    CoffeeShopSystem-->>Customer: order confirmation
 ```
-
 
 
 2.Then draw the price change. Two short diagrams or one, your choice: the manager changing the price, and Sam's order being totalled. Follow the arrow that reads the price and say exactly which object it lands on.
 Yes — copy these directly into GitHub. They are Mermaid code:
+Copy these directly into GitHub:
 
 ```mermaid
 sequenceDiagram
-    participant Manager
+    participant User
     participant CoffeeShopSystem
-    participant Item
+    participant inventory
 
-    Manager->>CoffeeShopSystem: Change item price
-    CoffeeShopSystem->>Item: Update price
-    Item-->>CoffeeShopSystem: Price updated
-    CoffeeShopSystem-->>Manager: Confirm price change
+    User->>CoffeeShopSystem: setPrice()
+    CoffeeShopSystem->>inventory: setPrice()
+    inventory-->>CoffeeShopSystem: return updated price
+    CoffeeShopSystem-->>User: display updated price
 ```
 
 ```mermaid
 sequenceDiagram
-    participant Sam
+    participant Customer
     participant CoffeeShopSystem
     participant Order
-    participant Item
+    participant inventory
 
-    Sam->>CoffeeShopSystem: View order total
-    CoffeeShopSystem->>Order: Calculate total
-    Order->>Item: Read price
-    Item-->>Order: Return price
-    Order-->>CoffeeShopSystem: Return total
-    CoffeeShopSystem-->>Sam: Show order total
+    Customer->>CoffeeShopSystem: viewOrder()
+    CoffeeShopSystem->>Order: calculateOrderCost()
+    Order->>inventory: askForCurrentPrice()
+    inventory-->>Order: return current price
+    Order-->>CoffeeShopSystem: return order cost
+    CoffeeShopSystem-->>Customer: display order total
 ```
 
 
