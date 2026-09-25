@@ -190,7 +190,7 @@ Staff "1" -- "0..*" Stay : handles
 
 ## My Answer
 
-The two concepts I am separating are `RoomCategory` and `Room`. A `RoomCategory` is the general type of room that Harborview Inn offers, such as a deluxe room. A `Room` is one particular physical room, such as Room 314. The RoomCategory knows the general category name and nightly rate, while the Room knows its room number and current status. One RoomCategory can describe many Rooms.
+The two concepts I am separating are RoomCategory and Room. A RoomCategory is the general type of room that Harborview Inn offers, such as a deluxe room. A Room is one particular physical room, such as Room 314. The RoomCategory knows the general category name and nightly rate, while the Room knows its room number and current status. One RoomCategory can describe many Rooms.
 
 For example, Room 314 is a deluxe room. On February 20, the deluxe room rate is $180 per night. On March 1, the hotel changes the deluxe rate to $200. Room 314 is still the same physical room even though the general deluxe rate changed. A reservation made before March 1 could still have an agreed rate of $180, while a new reservation could use the new $200 rate.
 
@@ -248,8 +248,5 @@ sequenceDiagram
     Reservation-->>Staff: confirm guest has checked in
 ```
 
-### What Drawing the Sequence Diagram Made Me Decide
-
-Drawing the sequence diagram made me decide that Room should know its own current status because the physical room is what can be available, occupied, reserved, or under maintenance. Reservation knows which room is connected to the booking, but it does not need to own the room's status. The diagram also made me keep Reservation and Stay separate because the reservation exists before the guest checks in, while the stay represents the actual visit.
 
 ---
