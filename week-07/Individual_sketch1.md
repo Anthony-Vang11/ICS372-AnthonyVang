@@ -84,18 +84,6 @@ I'm also unsure how the system should handle customizable menu items. If an ingr
 | | **3.** System stops offering every menu item that needs the ingredient, and every customization that uses it. |
 | | **4.** System shows the barista what is no longer offered. |
 
-```mermaid
-sequenceDiagram
-  actor Member
-  participant Library
-  participant Catalog
-
-  Member ->> Library: searchByTitle("Dune")
-  Library ->> Catalog: findByTitle("Dune")
-  Note over Catalog: MISSING. Proposed: Catalog.findByTitle(title: String): Book, because Catalog holds every book.
-  Catalog -->> Library: book
-  Library -->> Member: book
-```
 
 **Section 2 of the template: what you're not sure about.** Name the arrow or the proposal you're least sure of, and what made it hard to place.
 
