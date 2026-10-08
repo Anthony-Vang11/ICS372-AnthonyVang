@@ -88,11 +88,12 @@ I'm also unsure how the system should handle customizable menu items. If an ingr
 
 ## 2. What I'm Not Sure About
 
-*One or two sentences. What feels uncertain or wrong about what you just produced?*
 
-*This is about your own thinking, and it is required every week. It is not the same thing as a question written for a stakeholder. When the prompt asks you for one of those, it belongs up in section 1 with the step that asked for it, and it does not replace this section.*
+I'm least sure about where ingredient availability should be stored. The current `Ingredient` class only has `name` and `ingredientId`, so it does not currently represent whether an ingredient is available. I proposed adding `setOut(isOut: boolean): void`, but the group should decide whether availability belongs in `Ingredient` or whether `CoffeeShopSystemLogic` should manage it as part of inventory.
 
-[Your response here]
+I'm also unsure how the system should handle customizable menu items. If an ingredient is unavailable, the system may need to disable only the customization that uses it instead of making the entire menu item unavailable. For example, if a customer can order a latte without a particular syrup, the latte should remain available while that syrup is unavailable.
+
+   
 
 ---
 
