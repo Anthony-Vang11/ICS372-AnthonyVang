@@ -64,10 +64,6 @@ sequenceDiagram
     CoffeeShopSystemInput -->> Barista: unavailable items displayed
 ```
 
-I'm least sure about where ingredient availability should be stored. The current `Ingredient` class only has `name` and `ingredientId`, so it does not currently represent whether an ingredient is available. I proposed adding `setOut(isOut: boolean): void`, but the group should decide whether availability belongs in `Ingredient` or whether `CoffeeShopSystemLogic` should manage it as part of inventory.
-
-I'm also unsure how the system should handle customizable menu items. If an ingredient is unavailable, the system may need to disable only the customization that uses it instead of making the entire menu item unavailable. For example, if a customer can order a latte without a particular syrup, the latte should remain available while that syrup is unavailable.
-
    
 **Actor:** Barista
 
