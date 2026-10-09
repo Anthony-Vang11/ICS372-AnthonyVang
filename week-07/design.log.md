@@ -6,50 +6,45 @@
 **Topic:** [Tonight's topic — filled in by instructor each week]
 
 ---
+Check every box before you commit. **15 points, scored on the quality of your reasoning** (see `design-log-rubric.md`).
 
-## Part 1 — The Problem
-
-*In 2-3 sentences, describe the design problem you worked on tonight in your own words. Do not copy the handout. What were you actually trying to figure out?*
-
-[Your response here]
-
----
-
-## Part 2 — Your Design Decision
-
-*What did your group decide? Describe the design you landed on clearly enough that someone who wasn't in your group could understand it. If you produced a diagram, reference it here by filename.*
-
-[Your response here]
+- [ ] The header line below is at the top of your entry
+- [ ] Parts 1 through 5 of the template each have your own answer under them
+- [ ] Committed to `week-07/design-log.md` **(required: nothing is graded without it)**
 
 ---
 
-## Part 3 — How You Got There
+Write your entry using the standard template. No group discussion. **Commit to:** `week-07/design-log.md`.
 
-*This is the most important section. Start from your individual sketch — what did you think before your group talked? Then walk through how the group discussion changed (or didn't change) your thinking. What did the problem itself tell you about what the design needed to do? What constraints or requirements drove your decisions?*
+**Header:** *Who Does the Work: assigning responsibilities.*
 
-*Avoid starting from a solution. If you found yourself thinking "we should use X pattern" or "this should be a Y" before fully understanding the problem, note that here and explain whether you went back to the problem or pushed forward anyway.*
+- **Part 1:** Tonight wasn't "draw sequence diagrams." Say what the problem actually was.
+- **Part 3:** Name one job you put on a class in your sketch that ended up somewhere else. What made the first class look right at the time, and what moved it?
+- **Part 4:** Pick a job where a different owner could be defended. Argue for the owner your group didn't choose, fairly enough that someone who preferred it would recognize their own argument.
+- **Part 5:** Name the class you expect to be hardest to write as code next week, and what about it you still can't say for certain.
 
-[Your response here]
+    **Who Does the Work: assigning responsibilities.**
 
----
+## Part 1: What was the actual problem?
 
-## Part 4 — The Road Not Taken
+The problem was deciding which classes should be responsible for doing each job in the coffee shop system. Drawing sequence diagrams helped us see which objects needed to communicate, but the main challenge was deciding where each responsibility belonged and whether the class had the data needed to do the job. For example, when a barista marks an ingredient out of stock, the system must record that the ingredient is unavailable and determine which menu items or customizations use it.
 
-*What other approaches did you consider and why did you move away from them? If your group disagreed about something, describe both positions and explain how you resolved it. If you personally favored a different approach than what the group decided, explain your reasoning — even if you were outvoted.*
+## Part 2: What did you learn about assigning responsibilities?
 
-[Your response here]
+I learned that a class should not be assigned a job just because its name sounds related to the job. The class should have the information needed to perform that responsibility, or be able to obtain it from another class. In my sequence diagram, `Ingredient` has a name and ingredient ID, but it does not currently have an availability attribute. That made me realize that marking an ingredient unavailable requires a change or addition to the model. The system also needs to identify the menu items that depend on that ingredient.
 
----
+## Part 3: A job that moved to another class
 
-## Part 5 — What You're Uncertain About
+In my original sketch, I put the `setOut(isOut)` responsibility on `Ingredient` because the ingredient itself seemed like the natural place to store whether it was available. However, deciding which menu items should no longer be offered involves more than changing one ingredient's status. `CoffeeShopSystemLogic` is a better place to coordinate checking items and their customizations because it manages the process across multiple objects. The ingredient can still store its availability, while the logic class coordinates what happens after the status changes.
 
-*What would you change about your design if you had more time or information? What are you not confident about? What might break later?*
+## Part 4: A different owner that could be defended
 
-[Your response here]
+One responsibility where another owner could make sense is deciding whether a menu item can be sold right now. `Item` could be a reasonable owner because it knows which ingredients the item requires, so it could check whether those ingredients are available. Someone favoring this design could argue that the item should determine whether it can be sold because it knows what it contains. Our proposed approach places the overall checking process in `CoffeeShopSystemLogic`, which can coordinate checks across regular items and customized items. This keeps the coordination in one place, although it means the logic class must ask other objects for the information it needs.
 
----
+## Part 5: The hardest class to write next week
 
-## Word Count: [X words]
+I expect `CoffeeShopSystemLogic` to be the hardest class to write because it coordinates multiple objects and needs to handle what happens when an ingredient becomes unavailable. I am still unsure how ingredient availability will be stored and how the system will identify every menu item and customization that uses that ingredient. I also need to understand how unavailable items will be removed from what customers can order without incorrectly removing other available options. The implementation will depend on how our group finalizes these responsibilities and the methods between the classes.
+
 
 ---
 
