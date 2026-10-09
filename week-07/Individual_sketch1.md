@@ -92,5 +92,3 @@ I'm also unsure how the system should handle customizable menu items. If an ingr
    
 
 ---
-
-**Commit this file before group discussion begins.**
